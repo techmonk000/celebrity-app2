@@ -1,0 +1,30 @@
+service: celebrity-api
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1
+  environment:
+    DATABASE_URL: ${env:DATABASE_URL}
+    GEMINI_API_KEY: ${env:GEMINI_API_KEY}
+  stage: dev
+
+functions:
+  api:
+    handler: dist/lambda.handler
+    events:
+      - httpApi: '*'
+
+package:
+  exclude:
+    - node_modules/**
+    - test/**
+    - src/**
+    - tsconfig.json
+
+plugins:
+  - serverless-offline
+
+
+build:
+  esbuild: false
