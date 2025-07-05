@@ -5,8 +5,8 @@ provider:
   runtime: nodejs20.x
   region: us-east-1
   environment:
-    DATABASE_URL: postgresql://admin:SnJMcSDOZklJqDw1tdGebOU3VV3rVdvv@dpg-d1jqqtndiees73ceudfg-a.oregon-postgres.render.com/celebrity
-    GEMINI_API_KEY: AIzaSyBD_utWk9qja0FuU5daDQsK7Q2OykUFQ60
+    DATABASE_URL: "postgresql://admin:SnJMcSDOZklJqDw1tdGebOU3VV3rVdvv@dpg-d1jqqtndiees73ceudfg-a.oregon-postgres.render.com/celebrity"
+    GEMINI_API_KEY: "AIzaSyBD_utWk9qja0FuU5daDQsK7Q2OykUFQ60"
 
   httpApi:
     cors:
