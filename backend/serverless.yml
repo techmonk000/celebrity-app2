@@ -4,10 +4,10 @@ provider:
   name: aws
   runtime: nodejs20.x
   region: us-east-1
+  stage: dev
   environment:
-    DATABASE_URL: "postgresql://admin:SnJMcSDOZklJqDw1tdGebOU3VV3rVdvv@dpg-d1jqqtndiees73ceudfg-a.oregon-postgres.render.com/celebrity"
+    DATABASE_URL: "postgresql://admin:SnJMcSDOZklJqDw1tdGebOU3VV3rVdvv@dpg-d1jqqtndiees73ceudfg-a.oregon-postgres.render.com/celebrity?sslmode=require"
     GEMINI_API_KEY: "AIzaSyBD_utWk9qja0FuU5daDQsK7Q2OykUFQ60"
-
   httpApi:
     cors:
       allowedOrigins:
@@ -22,7 +22,6 @@ provider:
       allowedHeaders:
         - Content-Type
         - Authorization
-  stage: dev
 
 functions:
   api:
@@ -31,15 +30,8 @@ functions:
       - httpApi: '*'
 
 package:
-  exclude:
-    - node_modules/**
-    - test/**
-    - src/**
-    - tsconfig.json
+  individually: true
+  excludeDevDependencies: true
 
 plugins:
-  - serverless-offline
-
-
-build:
-  esbuild: false
+  - serverless-dotenv-plugin
