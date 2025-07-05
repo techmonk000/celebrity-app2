@@ -12,7 +12,7 @@ export default function SearchPage() {
     if (!query) return;
     setLoading(true);
     try {
-      const res = await axios.get(`http://localhost:3000/celebrity/search?q=${query}`);
+      const res = await axios.get(`https://b3syyb9vf3.execute-api.us-east-1.amazonaws.com/celebrity/search?q=${query}`);
       setResult(res.data.generated);
     } catch (err) {
       setResult('Something went wrong. Please try again later.');

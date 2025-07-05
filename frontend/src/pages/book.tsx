@@ -13,13 +13,13 @@ export default function BookPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/booking', {
+      const response = await axios.post('https://b3syyb9vf3.execute-api.us-east-1.amazonaws.com/booking', {
         fanId: Number(fanId),
         celebrityId: Number(celebrityId),
         message,
         date,
       });
-      setBookingId(response.data.id); // ✅ works now
+      setBookingId(response.data.id); 
       localStorage.setItem('latestBookingId', response.data.id);
       alert('Booking successful!');
     } catch (err) {

@@ -18,7 +18,7 @@ export default function FanOnboard() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3000/fan', formData);
+      await axios.post('https://b3syyb9vf3.execute-api.us-east-1.amazonaws.com/fan', formData);
       alert('Fan registered successfully!');
       setFormData({ name: '', email: '', interests: '', favoriteCelebrity: '' });
     } catch (err) {

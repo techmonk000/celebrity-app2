@@ -33,7 +33,7 @@ export default function CelebrityProfile() {
     if (!id) return;
 
     axios
-      .get('http://localhost:3000/celebrity')
+      .get('https://b3syyb9vf3.execute-api.us-east-1.amazonaws.com/celebrity')
       .then((res) => {
         const celeb = res.data.find((c: Celebrity) => c.id === Number(id));
         setCelebrity(celeb);

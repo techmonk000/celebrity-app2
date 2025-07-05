@@ -11,7 +11,7 @@ export default function AIOnboardPage() {
   const handleAutoFill = async () => {
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:3000/celebrity/ai-fill', { prompt });
+      const res = await axios.post('https://b3syyb9vf3.execute-api.us-east-1.amazonaws.com/celebrity/ai-fill', { prompt });
       setFormData(res.data);
     } catch (err) {
       alert('AI failed. Please try again.');
@@ -21,7 +21,7 @@ export default function AIOnboardPage() {
   };
 
   const handleSubmit = async () => {
-    await axios.post('http://localhost:3000/celebrity', formData);
+    await axios.post('https://b3syyb9vf3.execute-api.us-east-1.amazonaws.com/celebrity', formData);
     alert('Celebrity saved!');
     setFormData(null);
     setPrompt('');

@@ -18,7 +18,7 @@ export default function FansDashboard() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/fan')
+      .get('https://b3syyb9vf3.execute-api.us-east-1.amazonaws.com/fan')
       .then((res) => {
         setFans(res.data);
         setLoading(false);

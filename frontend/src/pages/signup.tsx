@@ -12,7 +12,7 @@ export default function FanRegister() {
 
   const handleRegister = async () => {
     try {
-      const res = await axios.post('http://localhost:3000/fan/register', { name, email });
+      const res = await axios.post('https://b3syyb9vf3.execute-api.us-east-1.amazonaws.com/fan/register', { name, email });
       const fanId = res.data.id;
       localStorage.setItem('fanId', res.data.id);
       alert('Fan registered successfully!');
