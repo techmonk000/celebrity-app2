@@ -6,8 +6,8 @@ provider:
   region: us-east-1
   stage: dev
   environment:
-    DATABASE_URL: "postgresql://admin:SnJMcSDOZklJqDw1tdGebOU3VV3rVdvv@dpg-d1jqqtndiees73ceudfg-a.oregon-postgres.render.com/celebrity?sslmode=require"
-    GEMINI_API_KEY: "AIzaSyBD_utWk9qja0FuU5daDQsK7Q2OykUFQ60"
+    DATABASE_URL: ""
+    GEMINI_API_KEY: ""
   httpApi:
     cors:
       allowedOrigins:
