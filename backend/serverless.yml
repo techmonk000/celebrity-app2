@@ -7,6 +7,21 @@ provider:
   environment:
     DATABASE_URL: ${env:DATABASE_URL}
     GEMINI_API_KEY: ${env:GEMINI_API_KEY}
+
+  httpApi:
+    cors:
+      allowedOrigins:
+        - https://celebrity-app2.vercel.app
+      allowedMethods:
+        - GET
+        - POST
+        - PUT
+        - PATCH
+        - DELETE
+        - OPTIONS
+      allowedHeaders:
+        - Content-Type
+        - Authorization
   stage: dev
 
 functions:
